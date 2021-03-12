@@ -21,22 +21,16 @@ class App extends Component {
         this.setState({
           travels: response.data
         })
-
       })
   }
 
-
-
   render() {
-     console.log(this.state.travels)
-
+    console.log(this.state)
     return (
       <body>
         <div>
-            <h1>Home</h1>
-          
+          <h1>Home</h1>
         </div>
-
       </body>
     );
   }

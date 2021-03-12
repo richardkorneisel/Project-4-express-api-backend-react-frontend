@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import { Switch, Route, Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
+import Header from './Header/Header';
+import Homepage from './Homepage/Homepage';
+import Create_trip from './Create_trip/Create_trip';
+import Trip_Gallery from './Trip_Gallery/Trip_Gallery.js';
+import Instructions from './Instructions/Instructions';
 
 class App extends Component {
   constructor(props) {
@@ -29,7 +34,16 @@ class App extends Component {
     return (
       <body>
         <div>
-          <h1>Home</h1>
+          <h1>App Page</h1>
+
+          <Route>
+            <Header />
+            <Homepage/>
+            <Create_trip/>
+            <Trip_Gallery/>
+            <Instructions/>
+          </Route>
+
         </div>
       </body>
     );

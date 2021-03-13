@@ -6,8 +6,10 @@ import Nav from '../Nav/Nav';
 function Header() {
   return (
     <div className='Header'>
-      <h3>Header Page</h3>
       <Route>
+        <Link className= 'link' to = '/'>
+          <h1 className='appName'>Travel Report App</h1>
+        </Link>
         <Nav />
       </Route>
     </div>

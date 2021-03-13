@@ -4,9 +4,10 @@ import { Switch, Route, Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import Header from './Header/Header';
 import Homepage from './Homepage/Homepage';
-import Create_trip from './Create_trip/Create_trip';
-import Trip_Gallery from './Trip_Gallery/Trip_Gallery';
+import CreateTrip from './CreateTrip/CreateTrip';
+import TripGallery from './TripGallery/TripGallery';
 import Instructions from './Instructions/Instructions';
+import TripDetail from './TripDetail/TripDetail';
 
 class App extends Component {
   constructor(props) {
@@ -34,17 +35,31 @@ class App extends Component {
     return (
       <body>
         <div>
-          <h1>App Page</h1>
+         
+              <header>
+              <Header />
+              </header>
+              <Switch>
+              < Route exact path='/' render={(routerProps) =>
+                <Homepage {...this.state} {...routerProps} />
+              }>
 
-          <Route>
-            <Header />
-            <Homepage/>
-            <Create_trip/>
-            <Trip_Gallery/>
-            <Instructions/>
-          </Route>
-          < Route path='./TripGallery/' render={(routerProps) => <TripGallery {...this.state}{...routerProps} />
-              }/>
+              </Route>
+
+              <Route path="/CreateTrip" component={CreateTrip} />
+
+              < Route path='/TripGallery' render={(routerProps) => <TripGallery {...this.state}{...routerProps} />
+              }></Route>
+              
+              <Route path="/Instructions" component={Instructions} />
+
+              <Route path="/TripDetail" render={(routerProps) => <TripDetail {...this.state}{...routerProps} />
+              }></Route>
+              
+              </Switch>
+            
+          
+
         </div>
       </body>
     );

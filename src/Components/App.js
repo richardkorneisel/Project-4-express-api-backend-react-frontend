@@ -5,7 +5,7 @@ import axios from 'axios';
 import Header from './Header/Header';
 import Homepage from './Homepage/Homepage';
 import Create_trip from './Create_trip/Create_trip';
-import Trip_Gallery from './Trip_Gallery/Trip_Gallery.js';
+import Trip_Gallery from './Trip_Gallery/Trip_Gallery';
 import Instructions from './Instructions/Instructions';
 
 class App extends Component {
@@ -43,7 +43,8 @@ class App extends Component {
             <Trip_Gallery/>
             <Instructions/>
           </Route>
-
+          < Route path='./TripGallery/' render={(routerProps) => <TripGallery {...this.state}{...routerProps} />
+              }/>
         </div>
       </body>
     );

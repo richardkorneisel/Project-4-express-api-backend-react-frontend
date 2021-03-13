@@ -40,18 +40,21 @@ class App extends Component {
           </header>
 
           <Switch>
-            < Route exact path='/' render={(routerProps) =>
+            <Route exact path='/' render={(routerProps) =>
               <Homepage {...this.state} {...routerProps} />
             }>
             </Route>
-            <Route path="/CreateTrip" component={CreateTrip} />
-            < Route path='/TripGallery' render={(routerProps) => <TripGallery {...this.state}{...routerProps} />
+            <Route path="/CreateTrip" component={CreateTrip} ></Route>
+            
+            <Route path='/TripGallery' render={(routerProps) => <TripGallery {...this.state}{...routerProps} />
             }>
             </Route>
 
-            <Route path="/Instructions" component={Instructions} />
-            <Route path="/TripDetail" render={(routerProps) => <TripDetail {...this.state}{...routerProps} />
+            <Route path="/Instructions" component={Instructions} ></Route>
+            
+            <Route path="/TripDetail/:id" render={(routerProps) => <TripDetail {...this.state}{...routerProps} />
             }></Route>
+            
           </Switch>
         </div>
       </body>

@@ -1,28 +1,33 @@
 import React, { Component } from 'react';
 import './TripDetail.css';
-
+import TripGallery from '../TripGallery/TripGallery'
 
 export default function TripDetails (props) {
 
         let details= props.travels.travels
-        console.log(details[0].title)
+        let imageId= props.match.params.id
+        // if (imageId != null){
+        //     imageId -= 1
+        // } 
+        console.log(details)
+        console.log(props.match.params.id)
         return (
             <div className="home">
                 <h3>Trip Detail Page</h3>
-                <h3>Title :   {details[0].title}</h3>
+                <h3>Title :   {details[imageId].title}</h3>
                 <p>
                     Trip Picture :
-                    <img src={details[0].image_url} alt="trip picture" width="500" height="600"/> 
-                
+                    <img src={details[imageId].image_url} alt="trip picture" width="500" height="600"/> 
                 </p>
                 <p>
                     map :
-                     <a href={details[0].map_url}>Map of area</a> <br/>
+                     <a href={details[imageId].map_url}>Map of area</a> <br/>
                      <br/>
 
 
-                     Title :   {details[0].trip_report}
+                     Title :   {details[imageId].trip_report}
                 </p>
+                {/* <TripGallery {...props}/> */}
             </div>
         );
     

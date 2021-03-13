@@ -6,7 +6,7 @@ import GalleryCard from '../GalleryCard/GalleryCard'
 export default function TripGallery (props) {
     let details=props.travels.travels
     let gallery = details.map((value, index) =>
-            <Link to={"/TripDetail/" + value.id} >
+            <Link to={"/TripDetail/" + index} > 
                 <div key={index}>
                     <div className="container">
                         <div className="centered">{value.title}</div>
@@ -15,7 +15,7 @@ export default function TripGallery (props) {
                 </div>
             </Link>
         )
- 
+ //value.id vs index row 9
         //console.log(galleryCard)
         console.log(details)
         //console.log(value)

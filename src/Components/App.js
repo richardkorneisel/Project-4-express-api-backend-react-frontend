@@ -35,31 +35,24 @@ class App extends Component {
     return (
       <body>
         <div>
-         
-              <header>
-              <Header />
-              </header>
-              <Switch>
-              < Route exact path='/' render={(routerProps) =>
-                <Homepage {...this.state} {...routerProps} />
-              }>
+          <header>
+            <Header />
+          </header>
 
-              </Route>
+          <Switch>
+            < Route exact path='/' render={(routerProps) =>
+              <Homepage {...this.state} {...routerProps} />
+            }>
+            </Route>
+            <Route path="/CreateTrip" component={CreateTrip} />
+            < Route path='/TripGallery' render={(routerProps) => <TripGallery {...this.state}{...routerProps} />
+            }>
+            </Route>
 
-              <Route path="/CreateTrip" component={CreateTrip} />
-
-              < Route path='/TripGallery' render={(routerProps) => <TripGallery {...this.state}{...routerProps} />
-              }></Route>
-              
-              <Route path="/Instructions" component={Instructions} />
-
-              <Route path="/TripDetail" render={(routerProps) => <TripDetail {...this.state}{...routerProps} />
-              }></Route>
-              
-              </Switch>
-            
-          
-
+            <Route path="/Instructions" component={Instructions} />
+            <Route path="/TripDetail" render={(routerProps) => <TripDetail {...this.state}{...routerProps} />
+            }></Route>
+          </Switch>
         </div>
       </body>
     );

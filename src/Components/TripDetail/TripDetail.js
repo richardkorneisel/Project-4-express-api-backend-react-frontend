@@ -4,7 +4,7 @@ import TripGallery from '../TripGallery/TripGallery'
 
 export default function TripDetails (props) {
 
-        let details= props.travels.travels
+        let details= props.travels
         let imageId= props.match.params.id
         // if (imageId != null){
         //     imageId -= 1
@@ -20,14 +20,14 @@ export default function TripDetails (props) {
                     <img src={details[imageId].image_url} alt="trip picture" width="500" height="600"/> 
                 </p>
                 <p>
-                    map :
-                     <a href={details[imageId].map_url}>Map of area</a> <br/>
+                    Map :
+                     <a href={details[imageId].map_url} target="_blank" >Map of area</a> <br/>
                      <br/>
 
 
-                     Title :   {details[imageId].trip_report}
+                     Trip Report :   {details[imageId].trip_report}
                 </p>
-                {/* <TripGallery {...props}/> */}
+                
             </div>
         );
     

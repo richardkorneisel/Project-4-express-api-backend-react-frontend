@@ -4,7 +4,7 @@ import { Switch, Route, Link, Redirect } from 'react-router-dom';
 import GalleryCard from '../GalleryCard/GalleryCard'
 
 export default function TripGallery (props) {
-    let details=props.travels.travels
+    let details=props.travels
     let gallery = details.map((value, index) =>
             <Link to={"/TripDetail/" + index} > 
                 <div key={index}>

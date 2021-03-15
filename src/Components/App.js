@@ -18,6 +18,11 @@ class App extends Component {
       trip: []
     }
   }
+  resetTripMade=()=>{
+    this.setState({
+      tripMade: false
+    })
+  }
 
   getTravelGallery = () => {
     axios.get(apiUrl, {
@@ -36,21 +41,25 @@ class App extends Component {
     this.getTravelGallery()
   }
 
-  createTrip = (e) => {
+  createTrip = async (e) => {
     e.preventDefault();
     let tempArray = []
-    axios.post(`${apiUrl}`, {
+    let response = await axios.post(`${apiUrl}`, {
       title: e.target.title.value,
       image_url: e.target.image_url.value,
       map_url: e.target.map_url.value,
       trip_report: e.target.trip_report.value,
 
     })
-      .then((response) => {
+       
         console.log(response);
         this.getTravelGallery();
-      });
+        
     console.log(this.state.data)
+    this.setState({
+      tripMade: true
+    })
+
   };
 
   deleteTrip = (e, id) => {
@@ -85,11 +94,14 @@ class App extends Component {
               <CreateTrip
                 travels={this.state.travels}
                 createTrip={this.createTrip}
+                tripMade={this.state.tripMade}
+                resetTripMade={this.resetTripMade}
               />
             )} ></Route>
 
             <Route path='/TripGallery' render={(routerProps) => <TripGallery {...this.state}{...routerProps}
               deleteTrip={this.deleteTrip}
+              
             />
             }>
             </Route>

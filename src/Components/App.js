@@ -19,7 +19,7 @@ class App extends Component {
     }
   }
 
-  componentDidMount = () => {
+  getTravelGallery = () => {
     axios.get(apiUrl, {
       headers: {
         Accept: 'application/json'
@@ -32,6 +32,10 @@ class App extends Component {
       })
   }
 
+  componentDidMount() {
+    this.getTravelGallery()
+  }
+
   createTrip = (e) => {
     e.preventDefault();
     let tempArray = []
@@ -42,55 +46,64 @@ class App extends Component {
       trip_report: e.target.trip_report.value,
 
     })
-
       .then((response) => {
-              console.log(response);
-              let tempArray = this.state.travels;
-              tempArray.push(response.data.travels);
-              this.setState({
-                travels: tempArray,
-               });
-            });
-            console.log(this.state.data)
-        };
-    
-  
+        console.log(response);
+        this.getTravelGallery();
+      });
+    console.log(this.state.data)
+  };
 
-    render() {
-      console.log(this.state)
-      return (
-        <body>
-          <div>
-            <header>
-              <Header />
-            </header>
+  deleteTrip = (e, id) => {
+    e.preventDefault();
+    let tempArray = []
+    console.log(`${apiUrl}/${id}`)
+    axios.delete(`${apiUrl}/${id}`)
+      .then((response) => {
 
-            <Switch>
-              <Route exact path='/' render={(routerProps) =>
-                <Homepage {...this.state} {...routerProps} />
-              }>
-              </Route>
-              <Route path="/CreateTrip" component={() => (
-                <CreateTrip
-                  travels={this.state.travels}
-                  createTrip={this.createTrip}
-                />
-              )} ></Route>
+        this.getTravelGallery();
 
-              <Route path='/TripGallery' render={(routerProps) => <TripGallery {...this.state}{...routerProps} />
-              }>
-              </Route>
+      });
+    console.log(this.state.data)
+  };
 
-              <Route path="/Instructions" component={Instructions} ></Route>
 
-              <Route path="/TripDetail/:id" render={(routerProps) => <TripDetail {...this.state}{...routerProps} />
-              }></Route>
+  render() {
+    console.log(this.state)
+    return (
+      <body>
+        <div>
+          <header>
+            <Header />
+          </header>
 
-            </Switch>
-          </div>
-        </body>
-      );
-    }
+          <Switch>
+            <Route exact path='/' render={(routerProps) =>
+              <Homepage {...this.state} {...routerProps} />
+            }>
+            </Route>
+            <Route path="/CreateTrip" component={() => (
+              <CreateTrip
+                travels={this.state.travels}
+                createTrip={this.createTrip}
+              />
+            )} ></Route>
+
+            <Route path='/TripGallery' render={(routerProps) => <TripGallery {...this.state}{...routerProps}
+              deleteTrip={this.deleteTrip}
+            />
+            }>
+            </Route>
+
+            <Route path="/Instructions" component={Instructions} ></Route>
+
+            <Route path="/TripDetail/:id" render={(routerProps) => <TripDetail {...this.state}{...routerProps} />
+            }></Route>
+
+          </Switch>
+        </div>
+      </body>
+    );
   }
+}
 
-  export default App;
+export default App;

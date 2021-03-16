@@ -4,11 +4,12 @@ import { Switch, Route, Link, Redirect } from 'react-router-dom';
 import GalleryCard from '../GalleryCard/GalleryCard'
 
 export default function TripGallery(props) {
+   
     let details = props.travels
-    let gallery = details.map((value, index) =>
+    let gallery = details.slice().reverse().map((value, index) =>
         <div>
-            <Link to={"/TripDetail/" + index} >
-                <div key={index}>
+            <Link to={"/TripDetail/" + value.id} >
+                <div key={value.id}>
                     <div className="container">
                         <div className="centered">{value.title}</div>
                         <img src={value.image_url}></img>

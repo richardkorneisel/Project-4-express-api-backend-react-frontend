@@ -25,6 +25,12 @@ class App extends Component {
     })
   }
 
+  resetEditMade=()=>{
+    this.setState({
+      editMade: false
+    })
+  }
+
   getTravelGallery = () => {
     axios.get(apiUrl, {
       headers: {
@@ -62,6 +68,33 @@ class App extends Component {
     })
 
   };
+
+  editTrip = async (e,id) => {
+    e.preventDefault();
+    console.log(e)
+    let tempArray = []
+    let response = await axios.put((`${apiUrl}/${id}`), {
+      title: e.target.title.value,
+      image_url: e.target.image_url.value,
+      map_url: e.target.map_url.value,
+      trip_report: e.target.trip_report.value,
+
+    })
+       
+        console.log(response);
+        this.getTravelGallery();
+        
+    console.log(this.state.data)
+    this.setState({
+      editMade: true
+    })
+
+  };
+
+
+
+
+
 
   deleteTrip = (e, id) => {
     e.preventDefault();
@@ -104,9 +137,9 @@ class App extends Component {
               <EditTrip
                 travels={this.state.travels}
                 {...routerProps}
-                // createTrip={this.editTrip}
-                // tripMade={this.state.tripMade}
-                // resetTripMade={this.resetTripMade}
+                editTrip={this.editTrip}
+                editMade={this.state.editMade}
+                resetEditMade={this.resetEditMade}
               />
             )} ></Route>
 

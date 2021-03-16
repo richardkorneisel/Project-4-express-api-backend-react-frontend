@@ -16,16 +16,22 @@ export default class EditTrip extends Component {
         console.log(details)
         let trip = details.find(trip => tripId == trip.id)
 
+        if (this.props.editMade){
+            this.props.resetEditMade()
+             return <Redirect to = "/TripGallery"/>
+      
+           }
+
         return (
             <div>
                 <h1>Edit Trip</h1>
 
-                <form onSubmit={this.props.createTrip} >
-                    Trip Title: <input type="text" name="title" value={trip.title} /> <br />
-                    Image URL: <input type="text" name="image_url" value={trip.image_url} /><br />
-                    Map URL :<input type="text" name="map_url" value={trip.map_url} /><br />
-                    Trip Report:<input type="text" name="trip_report" value={trip.trip_report} /><br />
-                    <input type="submit" value="Edit Trip Report" /><br />
+                <form onSubmit={(e)=>this.props.editTrip(e, trip.id)} >
+                    Trip Title: <input type="text" name="title" defaultValue={trip.title} /> <br />
+                    Image URL: <input type="text" name="image_url" defaultValue={trip.image_url} /><br />
+                    Map URL :<input type="text" name="map_url" defaultValue={trip.map_url} /><br />
+                    Trip Report:<input type="text" name="trip_report" defaultValue={trip.trip_report} /><br />
+                    <input type="submit" value="Save Changes" /><br />
 
                 </form>
 

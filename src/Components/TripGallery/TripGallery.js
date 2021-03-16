@@ -13,11 +13,13 @@ export default function TripGallery(props) {
                     <div className="container">
                         <div className="centered">{value.title}</div>
                         <img src={value.image_url}></img>
-                        <div >{value.id}</div>
+                        {/* <div >{value.id}</div> */}
                     </div>
                 </div>
             </Link>
-
+           
+            <Link to={"/EditTrip/" + value.id} >Edit Trip</Link>
+            
             <button
                 key={`button-${value.id}`}
                 id={value.id}
@@ -40,7 +42,7 @@ export default function TripGallery(props) {
         <div>
             <div className="home">
                 <h3>Trip Gallery Page</h3>
-                <Link to={'../TripDetail'}>Trip Details</Link> <br />
+                {/* <Link to={'../TripDetail'}>Trip Details</Link> <br /> */}
                 {gallery}
             </div>
 

@@ -9,13 +9,7 @@ export default class CreateTrip extends Component {
     render() {
      console.log(this.props.travels)
      
-  //   handleSubmit = e => {
-  //     //this.setState()
-  //     return
-  //     {TripGallery}
-  // }
-
-     if (this.props.tripMade){
+    if (this.props.tripMade){
       this.props.resetTripMade()
        return <Redirect to = "/TripGallery"/>
 

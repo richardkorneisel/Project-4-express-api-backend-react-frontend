@@ -8,6 +8,7 @@ import CreateTrip from './CreateTrip/CreateTrip';
 import TripGallery from './TripGallery/TripGallery';
 import Instructions from './Instructions/Instructions';
 import TripDetail from './TripDetail/TripDetail';
+import EditTrip from './EditTrip/EditTrip';
 const apiUrl = 'http://localhost:3000/api/travels'
 
 class App extends Component {
@@ -96,6 +97,16 @@ class App extends Component {
                 createTrip={this.createTrip}
                 tripMade={this.state.tripMade}
                 resetTripMade={this.resetTripMade}
+              />
+            )} ></Route>
+
+          <Route path="/EditTrip/:id" component={(routerProps) => (
+              <EditTrip
+                travels={this.state.travels}
+                {...routerProps}
+                // createTrip={this.editTrip}
+                // tripMade={this.state.tripMade}
+                // resetTripMade={this.resetTripMade}
               />
             )} ></Route>
 

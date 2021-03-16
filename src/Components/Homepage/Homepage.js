@@ -8,9 +8,7 @@ export default class Homepage extends Component {
         return (
             <div className="home">
                 <h3>Homepage</h3>
-                <Link to={'../TripGallery'}>Trip Gallery</Link> <br />
-                <Link to={'../CreateTrip'}>Create Trip</Link> <br />
-                <Link to={'../Instructions'}>Instructions</Link> <br />
+                
                    
             </div>
         );

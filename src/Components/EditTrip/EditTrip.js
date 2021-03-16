@@ -37,8 +37,8 @@ export default class EditTrip extends Component {
         }
 
         return (
-            <div>
-                <h1>Edit Trip</h1>
+            <div className="home">
+                <h3>Edit Trip</h3>
 
                 <form onSubmit={(e) => this.props.editTrip(e, trip.id)} >
                     Trip Title: <input type="text" name="title" defaultValue={trip.title} /> <br />

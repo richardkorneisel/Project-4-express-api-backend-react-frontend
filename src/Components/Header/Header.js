@@ -1,20 +1,15 @@
 import {Link, Route} from 'react-router-dom';
 import './Header.css';
 import Nav from '../Nav/Nav';
-import {Container, Col, Row} from 'react-bootstrap';
-//import Container from 'react-bootstrap/Container';
 
 function Header() {
   return (
-    <div>
+    <div className = "Header">
       <Route>
         <Link className='link' to='/'>
-          <Container fluid>
-            <Row>
-              <Col>
-                <h1>Travel Report App</h1></Col>
-            </Row>
-          </Container>
+         
+                <h1>Travel Report App</h1>
+          
         </Link>
         <Nav />
       </Route>

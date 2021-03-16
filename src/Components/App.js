@@ -9,6 +9,8 @@ import TripGallery from './TripGallery/TripGallery';
 import Instructions from './Instructions/Instructions';
 import TripDetail from './TripDetail/TripDetail';
 import EditTrip from './EditTrip/EditTrip';
+import {Container , Col, Row} from 'react-bootstrap';
+
 
 
 const apiUrl = 'http://localhost:3000/api/travels'
@@ -21,13 +23,13 @@ class App extends Component {
       trip: []
     }
   }
-  resetTripMade=()=>{
+  resetTripMade = () => {
     this.setState({
       tripMade: false
     })
   }
 
-  resetEditMade=()=>{
+  resetEditMade = () => {
     this.setState({
       editMade: false
     })
@@ -59,10 +61,10 @@ class App extends Component {
       trip_report: e.target.trip_report.value,
 
     })
-       
-        console.log(response);
-        this.getTravelGallery();
-        
+
+    console.log(response);
+    this.getTravelGallery();
+
     console.log(this.state.data)
     this.setState({
       tripMade: true
@@ -70,7 +72,7 @@ class App extends Component {
 
   };
 
-  editTrip = async (e,id) => {
+  editTrip = async (e, id) => {
     e.preventDefault();
     console.log(e)
     let response = await axios.put((`${apiUrl}/${id}`), {
@@ -80,10 +82,10 @@ class App extends Component {
       trip_report: e.target.trip_report.value,
 
     })
-       
-        console.log(response);
-        this.getTravelGallery();
-        
+
+    console.log(response);
+    this.getTravelGallery();
+
     console.log(this.state.data)
     this.setState({
       editMade: true
@@ -113,53 +115,59 @@ class App extends Component {
   render() {
     console.log("Trip state", this.state)
     return (
-      
-        <div>
-          
-          <header>
-            <Header />
-          </header>
-        
-          <Switch>
-            <Route exact path='/' render={(routerProps) =>
-              <Homepage {...this.state} {...routerProps} />
-            }>
-            </Route>
-            <Route path="/CreateTrip" component={() => (
-              <CreateTrip
-                travels={this.state.travels}
-                createTrip={this.createTrip}
-                tripMade={this.state.tripMade}
-                resetTripMade={this.resetTripMade}
-              />
-            )} ></Route>
 
-          <Route path="/EditTrip/:id" component={(routerProps) => (
-              <EditTrip
-                travels={this.state.travels}
-                {...routerProps} 
-                getTravelGallery={this.getTravelGallery}
-                editTrip={this.editTrip}
-                editMade={this.state.editMade}
-                resetEditMade={this.resetEditMade}
-              />
-            )} ></Route>
+      <div className = "App">
+        <Container fluid>
+          <Row>
+            <Col>
+              <header>
+                <Header />
+              </header>
 
-            <Route path='/TripGallery' render={(routerProps) => <TripGallery {...this.state}{...routerProps}
-              deleteTrip={this.deleteTrip}
-              
-            />
-            }>
-            </Route>
+              <Switch>
+                <Route exact path='/' render={(routerProps) =>
+                  <Homepage {...this.state} {...routerProps} />
+                }>
+                </Route>
+                <Route path="/CreateTrip" component={() => (
+                  <CreateTrip
+                    travels={this.state.travels}
+                    createTrip={this.createTrip}
+                    tripMade={this.state.tripMade}
+                    resetTripMade={this.resetTripMade}
+                  />
+                )} ></Route>
 
-            <Route path="/Instructions" component={Instructions} ></Route>
+                <Route path="/EditTrip/:id" component={(routerProps) => (
+                  <EditTrip
+                    travels={this.state.travels}
+                    {...routerProps}
+                    getTravelGallery={this.getTravelGallery}
+                    editTrip={this.editTrip}
+                    editMade={this.state.editMade}
+                    resetEditMade={this.resetEditMade}
+                  />
+                )} ></Route>
 
-            <Route path="/TripDetail/:id" render={(routerProps) => <TripDetail {...this.state}{...routerProps} />
-            }></Route>
+                <Route path='/TripGallery' render={(routerProps) => <TripGallery {...this.state}{...routerProps}
+                  deleteTrip={this.deleteTrip}
 
-          </Switch>
-        </div>
-      
+                />
+                }>
+                </Route>
+
+                <Route path="/Instructions" component={Instructions} ></Route>
+
+                <Route path="/TripDetail/:id" render={(routerProps) => <TripDetail {...this.state}{...routerProps} />
+                }></Route>
+
+              </Switch>
+
+            </Col>
+          </Row>
+        </Container>
+      </div>
+
     );
   }
 }

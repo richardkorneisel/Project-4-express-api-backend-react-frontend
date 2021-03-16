@@ -16,8 +16,8 @@ export default class CreateTrip extends Component {
      }
 
         return (
-            <div>
-            <h1>Create Trip Report</h1>
+            <div className="home">
+            <h3>Create Trip Report</h3>
            
             <form onSubmit={this.props.createTrip} >
           Trip Title: <input type="text" name="title" placeholder="i.e. Bismark ND" /> <br/>

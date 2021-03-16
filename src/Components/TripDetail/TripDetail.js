@@ -8,7 +8,7 @@ export default function TripDetails (props) {
         let tripId= props.match.params.id
        
         console.log(details)
-           let trip= details.find(trip => tripId==trip.id)
+        let trip= details.find(trip => tripId==trip.id)
         
         return (
             <div className="home">

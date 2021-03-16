@@ -9,6 +9,8 @@ import TripGallery from './TripGallery/TripGallery';
 import Instructions from './Instructions/Instructions';
 import TripDetail from './TripDetail/TripDetail';
 import EditTrip from './EditTrip/EditTrip';
+
+
 const apiUrl = 'http://localhost:3000/api/travels'
 
 class App extends Component {
@@ -50,7 +52,6 @@ class App extends Component {
 
   createTrip = async (e) => {
     e.preventDefault();
-    let tempArray = []
     let response = await axios.post(`${apiUrl}`, {
       title: e.target.title.value,
       image_url: e.target.image_url.value,
@@ -72,7 +73,6 @@ class App extends Component {
   editTrip = async (e,id) => {
     e.preventDefault();
     console.log(e)
-    let tempArray = []
     let response = await axios.put((`${apiUrl}/${id}`), {
       title: e.target.title.value,
       image_url: e.target.image_url.value,
@@ -111,14 +111,15 @@ class App extends Component {
 
 
   render() {
-    console.log(this.state)
+    console.log("Trip state", this.state)
     return (
-      <body>
+      
         <div>
+          
           <header>
             <Header />
           </header>
-
+        
           <Switch>
             <Route exact path='/' render={(routerProps) =>
               <Homepage {...this.state} {...routerProps} />
@@ -136,7 +137,8 @@ class App extends Component {
           <Route path="/EditTrip/:id" component={(routerProps) => (
               <EditTrip
                 travels={this.state.travels}
-                {...routerProps}
+                {...routerProps} 
+                getTravelGallery={this.getTravelGallery}
                 editTrip={this.editTrip}
                 editMade={this.state.editMade}
                 resetEditMade={this.resetEditMade}
@@ -157,7 +159,7 @@ class App extends Component {
 
           </Switch>
         </div>
-      </body>
+      
     );
   }
 }

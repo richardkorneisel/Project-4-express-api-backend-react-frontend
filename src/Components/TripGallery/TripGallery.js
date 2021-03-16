@@ -7,9 +7,9 @@ export default function TripGallery(props) {
    
     let details = props.travels
     let gallery = details.slice().reverse().map((value, index) =>
-        <div>
+        <div key={value.id}>
             <Link to={"/TripDetail/" + value.id} >
-                <div key={value.id}>
+                <div>
                     <div className="container">
                         <div className="centered">{value.title}</div>
                         <img src={value.image_url}></img>

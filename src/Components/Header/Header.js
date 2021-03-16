@@ -1,8 +1,8 @@
 import {Link, Route} from 'react-router-dom';
 import './Header.css';
 import Nav from '../Nav/Nav';
-import {Col, Row} from 'react-bootstrap';
-import Container from 'react-bootstrap/Container';
+import {Container, Col, Row} from 'react-bootstrap';
+//import Container from 'react-bootstrap/Container';
 
 function Header() {
   return (

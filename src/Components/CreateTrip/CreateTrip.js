@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import './CreateTrip.css';
 import { Switch, Route, Link, Redirect } from 'react-router-dom';
+import TripGallery from '../TripGallery/TripGallery';
 
 export default class CreateTrip extends Component {
 
     render() {
      console.log(this.props.travels)
+     
+  //   handleSubmit = e => {
+  //     //this.setState()
+  //     return
+  //     {TripGallery}
+  // }
 
         return (
             <div>
@@ -18,6 +25,7 @@ export default class CreateTrip extends Component {
           Trip Report:<input type="text" name="trip_report" placeholder="i.e. I caught a fish here."/><br/>
 
          <input type="submit" value="Add Trip Report" /><br/>
+         
         </form>
             <ul>{this.props.travels.travels}</ul>
      

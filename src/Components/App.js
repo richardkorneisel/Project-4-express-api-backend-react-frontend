@@ -14,7 +14,8 @@ import { Container, Col, Row } from 'react-bootstrap';
 
 
 
-const apiUrl = 'http://localhost:3000/api/travels'
+// const apiUrl = 'http://localhost:3000/api/travels'
+const apiUrl = "https://travel-report-app-backend.herokuapp.com/api/travels"
 
 class App extends Component {
   constructor(props) {

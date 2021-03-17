@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './CreateTrip.css';
-import { Switch, Route, Link, Redirect } from 'react-router-dom';
-import TripDetails from '../TripDetail/TripDetail';
-import TripGallery from '../TripGallery/TripGallery';
+import { Redirect } from 'react-router-dom';
+import {Button, Form} from 'react-bootstrap'
 
 export default class CreateTrip extends Component {
 
@@ -16,26 +15,36 @@ export default class CreateTrip extends Component {
      }
 
         return (
-            <div className="home">
+          <div className="home">
             <h3>Create Trip Report</h3>
-           
-            <form onSubmit={this.props.createTrip} >
-          Trip Title: <input type="text" name="title" placeholder="i.e. Bismark ND" /> <br/>
-          Image URL: <input type="text" name="image_url"placeholder="i.e. https://i.imgur.com/g4qSl7y.jpg" /><br/>
-          Map URL :<input type="text" name="map_url" placeholder="i.e. https://i.imgur.com/g4qSl7y.jpg" /><br/>
-          {/* Trip Report :<textarea input type="text" name="trip_report" >Enter text here...</textarea> <br/> */}
-          Trip Report:<input type="text" name="trip_report" placeholder="i.e. I caught a fish here."/><br/>
-         <input type="submit" value="Add Trip Report" /><br/>
-         
-        </form>
-        
+
+            <Form onSubmit={this.props.createTrip} >
+              <Form.Group controlId="exampleForm.ControlInput1">
+                <Form.Label>Title</Form.Label>
+                <Form.Control type="text" name="title" placeholder="i.e. Bismark ND" />
+              </Form.Group>
+
+              <Form.Group controlId="exampleForm.ControlInput1">
+                <Form.Label>Image URL</Form.Label>
+                <Form.Control type="text" name="image_url" placeholder="i.e. https://i.imgur.com/g4qSl7y.jpg" />
+              </Form.Group>
+
+              <Form.Group controlId="exampleForm.ControlInput1">
+                <Form.Label>Map URL</Form.Label>
+                <Form.Control type="text" name="map_url" placeholder="i.e. https://i.imgur.com/g4qSl7y.jpg" />
+              </Form.Group>
+
+              <Form.Group controlId="exampleForm.ControlTextarea1">
+                <Form.Label>Trip Report</Form.Label>
+                <Form.Control type="text" name="trip_report" placeholder="i.e. I caught a fish here." as="textarea" rows={6} />
+              </Form.Group>
+              <Button variant="success" as="input" type="submit" value="Add Trip Report" />
+            </Form>
+
             <ul>{this.props.travels.travels}</ul>
-            
-              
-           
+
           </div>
           
-        );
-        
+        );       
     }
 }

@@ -4,12 +4,10 @@ import Nav from '../Nav/Nav';
 
 function Header() {
   return (
-    <div className = "Header">
+    <div className="Header">
       <Route>
         <Link className='link' to='/'>
-         
-                <h1>Travel Report App</h1>
-          
+          <h1>Travel Report App</h1>
         </Link>
         <Nav />
       </Route>

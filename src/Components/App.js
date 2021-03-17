@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Switch, Route, Link, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import Header from './Header/Header';
 import Homepage from './Homepage/Homepage';
@@ -10,7 +10,7 @@ import Instructions from './Instructions/Instructions';
 import TripDetail from './TripDetail/TripDetail';
 import EditTrip from './EditTrip/EditTrip';
 import GalleryCard from './GalleryCard/GalleryCard';
-import {Container, Col, Row} from 'react-bootstrap';
+import { Container, Col, Row} from 'react-bootstrap';
 
 
 
@@ -24,6 +24,7 @@ class App extends Component {
       trip: []
     }
   }
+
   resetTripMade = () => {
     this.setState({
       tripMade: false
@@ -60,7 +61,6 @@ class App extends Component {
       image_url: e.target.image_url.value,
       map_url: e.target.map_url.value,
       trip_report: e.target.trip_report.value,
-
     })
 
     console.log(response);
@@ -70,7 +70,6 @@ class App extends Component {
     this.setState({
       tripMade: true
     })
-
   };
 
   editTrip = async (e, id) => {
@@ -81,7 +80,6 @@ class App extends Component {
       image_url: e.target.image_url.value,
       map_url: e.target.map_url.value,
       trip_report: e.target.trip_report.value,
-
     })
 
     console.log(response);
@@ -91,7 +89,6 @@ class App extends Component {
     this.setState({
       editMade: true
     })
-
   };
 
   deleteTrip = (e, id) => {
@@ -103,11 +100,9 @@ class App extends Component {
       .then((response) => {
 
         this.getTravelGallery();
-
       });
     console.log(this.state.data)
   };
-
 
   render() {
     console.log("Trip state", this.state)

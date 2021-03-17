@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './TripDetail.css';
-import TripGallery from '../TripGallery/TripGallery'
+import Card from 'react-bootstrap/Card';
 
 export default function TripDetails (props) {
          console.log("travel detail",props)
@@ -13,20 +13,30 @@ export default function TripDetails (props) {
         return (
             <div className="home">
                 <h3>Trip Detail Page</h3>
-                <h3>Title :   {trip.title}</h3>
-                <p>
-                    Trip Picture :
-                    <img src={trip.image_url} alt="trip picture" width="500" height="600"/> 
-                </p>
-                <p>
-                    Map :
-                     <a href={trip.map_url} target="_blank" >Map of area</a> <br/>
-                     <br/>
+               
+                <Card style={{ height: '75%' }} className='TripDetailCard' >
+                    <Card.Body className='flex-column d-flex'>
+
+                        <Card.Title>{trip.title}</Card.Title>
+                        <Card.Img variant="top" src={trip.image_url} class ="image_fluid"/>
+                        <Card.Text>Trip Report</Card.Text>
+                        <Card.Text>{trip.trip_report} </Card.Text>
+                        <Card.Text><a href={trip.map_url} target="_blank" >Map of area</a></Card.Text>
 
 
-                     Trip Report :   {trip.trip_report}
-                </p>
-                
+
+
+
+
+                    </Card.Body>
+                </Card>
+
+
+
+
+
+
+
             </div>
         );
     

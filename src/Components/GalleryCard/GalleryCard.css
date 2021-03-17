@@ -1,0 +1,13 @@
+.GalleryCard {
+    background-color: #F8F8F8;
+    margin: 20px;
+    border: 3px solid #28a745 !important;
+    border-radius: 15px !important;
+  } 
+  
+  .GalleryCard .buttonLink {
+    color: white !important;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 20px;
+}

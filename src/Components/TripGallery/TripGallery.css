@@ -2,3 +2,18 @@ img {
     width: 200px;
     height: 150px;
 }
+
+.GalleryCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 90%;
+  }
+  
+.TripGallery h3 {
+    margin-top: 5%;
+    
+    /* font-size: 30px;
+    text-align: center; */
+  }

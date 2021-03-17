@@ -9,7 +9,8 @@ import TripGallery from './TripGallery/TripGallery';
 import Instructions from './Instructions/Instructions';
 import TripDetail from './TripDetail/TripDetail';
 import EditTrip from './EditTrip/EditTrip';
-import {Container , Col, Row} from 'react-bootstrap';
+import GalleryCard from './GalleryCard/GalleryCard';
+import {Container, Col, Row} from 'react-bootstrap';
 
 
 
@@ -93,14 +94,10 @@ class App extends Component {
 
   };
 
-
-
-
-
-
   deleteTrip = (e, id) => {
     e.preventDefault();
-    let tempArray = []
+    let temp
+     = []
     console.log(`${apiUrl}/${id}`)
     axios.delete(`${apiUrl}/${id}`)
       .then((response) => {
@@ -151,7 +148,12 @@ class App extends Component {
 
                 <Route path='/TripGallery' render={(routerProps) => <TripGallery {...this.state}{...routerProps}
                   deleteTrip={this.deleteTrip}
+                />
+                }>
+                </Route>
 
+                <Route path='/GalleryCard' render={(routerProps) => <GalleryCard {...this.state}{...routerProps}
+                  deleteTrip={this.deleteTrip}
                 />
                 }>
                 </Route>

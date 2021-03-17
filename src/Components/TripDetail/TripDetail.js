@@ -15,18 +15,13 @@ export default function TripDetails (props) {
                 <h3>Trip Detail Page</h3>
                
                 <Card style={{ height: '75%' }} className='TripDetailCard' >
-                    <Card.Body className='flex-column d-flex'>
+                    <Card.Body className='flex-column d-flex align-items-center'>
 
                         <Card.Title>{trip.title}</Card.Title>
                         <Card.Img variant="top" src={trip.image_url} class ="image_fluid"/>
                         <Card.Text>Trip Report</Card.Text>
                         <Card.Text>{trip.trip_report} </Card.Text>
-                        <Card.Text><a href={trip.map_url} target="_blank" >Map of area</a></Card.Text>
-
-
-
-
-
+                        <Card.Text><a href={trip.map_url} target="_blank" >Map of Area Visited</a></Card.Text>
 
                     </Card.Body>
                 </Card>

@@ -7,6 +7,7 @@ export default class Instructions extends Component {
         return (
             <div className="home">
                 <h3>Instructions</h3>
+                <h5>1) adflksdjflkjsdf</h5>
             </div>
         );
     }

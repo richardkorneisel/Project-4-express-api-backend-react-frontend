@@ -35,7 +35,7 @@ export default class CreateTrip extends Component {
               </Form.Group>
 
               <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Trip Report</Form.Label>
+                <Form.Label>Trip Report (up to 255 characters)</Form.Label>
                 <Form.Control type="text" name="trip_report" placeholder="i.e. I caught a fish here." as="textarea" rows={6} />
               </Form.Group>
               <Button variant="success" as="input" type="submit" value="Add Trip Report" />

@@ -10,7 +10,7 @@ import Instructions from './Instructions/Instructions';
 import TripDetail from './TripDetail/TripDetail';
 import EditTrip from './EditTrip/EditTrip';
 import GalleryCard from './GalleryCard/GalleryCard';
-import { Container, Col, Row} from 'react-bootstrap';
+import { Container, Col, Row } from 'react-bootstrap';
 
 
 

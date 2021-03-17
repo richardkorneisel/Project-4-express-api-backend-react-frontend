@@ -9,6 +9,7 @@ export default class Homepage extends Component {
             <div className="homeImage">
                <div className="home">
                 <h3>Homepage</h3>
+                
                 </div>
             </div>
 

@@ -1,10 +1,12 @@
 .homeImage{
     margin-top: 5%;
-    background-image:url('https://i.imgur.com/iKoYp02.jpg'); 
+    background-image:url('https://i.imgur.com/ofovxjx.jpg'); 
     background-position: cover cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    height: 400%;
+    margin:0;
 }
 
 /* .homeImage {

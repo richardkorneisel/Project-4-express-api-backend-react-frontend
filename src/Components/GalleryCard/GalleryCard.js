@@ -23,14 +23,14 @@ export default function GalleryCard(props) {
 
                     <ButtonGroup>
 
-                        <Button variant="success" className='button mt-auto'>
+                        <Button variant="secondary" className='button mt-auto'>
                             <Link to={"/EditTrip/" + value.id} className='buttonLink'>Edit Trip</Link>
                         </Button>{' '}
 
                         <Button key={`button-${value.id}`}
                             id={value.id}
                             onClick={(e) => props.deleteTrip(e, value.id)}
-                            variant="success" className='button mt-auto'>
+                            variant="secondary" className='button mt-auto'>
                             <Link className='buttonLink'>Delete</Link>
                         </Button>{' '}
 

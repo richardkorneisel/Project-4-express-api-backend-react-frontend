@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Homepage.css';
-import { Jumbotron, Container, Image } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
 
 export default class Homepage extends Component {
 
@@ -15,16 +15,7 @@ export default class Homepage extends Component {
                 </div>
             </Container>
 
-            /* <Jumbotron fluid>
-                <Container>
-                    <Image className = "homeImage" src = 'https://i.imgur.com/iKoYp02.jpg' fluid/>
-                    <h1>Fluid jumbotron</h1>
-                    <p>
-                        This is a modified jumbotron that occupies the entire horizontal space of
-                        its parent.
-                    </p>
-                </Container>
-            </Jumbotron> */
+            
         );
     }
 }

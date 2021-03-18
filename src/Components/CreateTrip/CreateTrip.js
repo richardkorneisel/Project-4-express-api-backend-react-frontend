@@ -31,14 +31,14 @@ export default class CreateTrip extends Component {
 
               <Form.Group controlId="exampleForm.ControlInput1">
                 <Form.Label>Map URL</Form.Label>
-                <Form.Control type="text" name="map_url" placeholder="i.e. https://i.imgur.com/g4qSl7y.jpg" />
+                <Form.Control type="text" name="map_url" placeholder="i.e. https://goo.gl/maps/H829JHwDnctXdKEq6" />
               </Form.Group>
 
               <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Trip Report</Form.Label>
                 <Form.Control type="text" name="trip_report" placeholder="i.e. I caught a fish here." as="textarea" rows={6} />
               </Form.Group>
-              <Button variant="success" as="input" type="submit" value="Add Trip Report" />
+              <Button variant="secondary" as="input" type="submit" value="Add Trip Report" />
             </Form>
 
             <ul>{this.props.travels.travels}</ul>

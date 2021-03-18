@@ -94,8 +94,6 @@ class App extends Component {
 
   deleteTrip = (e, id) => {
     e.preventDefault();
-    let temp
-     = []
     console.log(`${apiUrl}/${id}`)
     axios.delete(`${apiUrl}/${id}`)
       .then((response) => {

@@ -15,7 +15,7 @@ export default function GalleryCard(props) {
             <Card style={{ width: '18rem' }} className='GalleryCard' >
                 <Card.Body className='flex-column d-flex'>
 
-                    <Card.Title>{value.title}</Card.Title>
+                    <Card.Title className="cardTitle">{value.title}</Card.Title>
 
                     <Link to={"/TripDetail/" + value.id} >
                         <Card.Img variant="top" src={value.image_url} />

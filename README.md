@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Project-4-travel-reporter-express-backend and Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This web application was designed to share users trips/adventures with others.
 
-## Available Scripts
+# Instructions
 
-In the project directory, you can run:
+### Team Members:
+- Todd Templen
+- Rich Korneisel
 
-### `npm start`
+### Technologies Used
+- Node.js
+- Express
+- Sequelize
+- MVC
+- PGAdmin/PosgreSQL
+- Postman
+- React
+- React Router
+- Axios
+- JSX
+- React Bootstrap
+- Heroku for deployment
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Planning - Wire Frames
+[Planning folder](Planning)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[Homepage 1](Planning/Homepage.jpg)
 
-### `npm test`
+[Create Report 2](Planning/Create_trip_report.jpg)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[View Reports 3](Planning/Trip_report.jpg)
 
-### `npm run build`
+## Frontend on Github
+[Frontend on Github](https://github.com/richardkorneisel/Project-4-travel-reporter-react-bootstrap-frontend)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Backend on Github
+[Backend on Github](https://github.com/ttemplen/Project-4-travel-reporter-express-backend)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Deployed App
+[Link to Deployed Frontend App on Heroku](https://travel-report-app-frontend.herokuapp.com/)
+### API
+[Link to Backend API deployed on Heroku](https://travel-report-app-backend.herokuapp.com/api/travels)
 
-### `npm run eject`
+### Component Structure
+- App
+    - Header
+        - Nav
+    - Homepage 
+    - Create_trip
+    - Trip_Detail
+    - Trip_Gallery
+        -Gallery_Card
+    - Instructions
+        
+    ## User Stories
+    1. As a user, I want to be able to browse through different trip reports on the internet so I reasearch new places to visit.
+    2. As a user, I want to be able to browse through different trip reports on the internet so my friends and family can share their trips with me.
+    3. As a user, I want to be able to create a trip report to share with my friends and family so they can share my experience.
+    4. As a user, I want to be able to include a picture from my trip in my trip report to share with my friends and family.
+    5. As a user, I want to be able to include to document the significant experiences from my trip in my text form to share with my friends and family.
+    6. As a user, I would like to be able to show a map of the area I visited on my trip, so people can better understand where I visited.
+    7. As a user, I would like to be able to edit my trip report, because I like to do updates as I recall them.
+    8. As a user, I would like the option to delete a trip report because sometimes I change my mind about what I want to share.
+    9. As a user, I want to be able to use the site easily on my mobile device as well as my computer because many times my mobile device is all I have with me.
+    10. As a user I would like to see the most recently added or updated trips so I don't have to scroll through old trips I have already reviewed.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Future Improvements
+- Add user login for greater security
+- Add a search function
+- Allow for additional photos to be posted
+- Fix page refresh issue on trip detail page and edit page
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

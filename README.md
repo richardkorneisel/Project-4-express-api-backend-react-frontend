@@ -3,6 +3,34 @@
 This web application was designed to share users trips/adventures with others.
 
 # Instructions
+There is a frontend and backend repository listed below.
+
+You will need the following packages loaded on you computer to run the repos.
+1. Node.js
+2. PostgresSQL 
+
+You will need to follow steps 1,2 & 3 for each GitHub repo you will be working with.
+
+1. Fork and clone this repository.
+2. Update config.json development with local database information.
+3. Run npm install
+4. Run following steps as needed for backend, to create, migrate and install database
+- npm install sequelize-cli sequelize pg
+    - installs Sequelize
+- npx sequelize init -instantiates Sequelize in your app.
+    - Creates config,models, migrations, seeders
+- npx sequelize model:generate --name NameOfYourModel --attributes column1Name:whatDataType,column2Name:whatDataType,etc.
+    - generates model and migrations, don't forget to update defaultValue
+- npx sequelize db:migrate
+    - runs migrations
+- npx sequelize seed:generate --name whatever-name-you-want
+    - creates new, empty seed file
+- npx sequelize db:seed:all
+    - runs all the seed files to populate data in your table(s)
+5. Run the following steps as needed for the frontend
+- npm install react
+- npm install axios
+- npm install react-router react-router-dom
 
 ### Team Members:
 - Todd Templen

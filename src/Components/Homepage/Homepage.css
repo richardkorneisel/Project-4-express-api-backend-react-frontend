@@ -5,10 +5,15 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    height: 400%;
+    height: 300%;
+    max-width: 100%;
     margin:0;
 }
 
+.welcome {
+    text-align: center;
+    padding-top: 10%;
+}
 /* .homeImage {
     background-image:url('https://i.imgur.com/iKoYp02.jpg'); 
     background-position: cover cover;

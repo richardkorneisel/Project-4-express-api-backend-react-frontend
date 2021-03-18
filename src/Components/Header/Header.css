@@ -1,7 +1,11 @@
 .Header {
-    background-color: lightyellow;
+    background-color:#E8F3F5;
     text-align: center;
-    /* border-bottom: 5px groove gray; */
     box-shadow: 5px 10px #bfbdbd;
+    border-radius: 10px; 
+    margin-top: 10px;
 
+}
+h1{
+    color: black;
 }

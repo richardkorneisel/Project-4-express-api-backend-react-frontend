@@ -59,7 +59,7 @@ export default class EditTrip extends Component {
                         <Form.Label>Trip Report</Form.Label>
                         <Form.Control type="text" name="trip_report" defaultValue={trip.trip_report} as="textarea" rows={6} />
                     </Form.Group>
-                    <Button variant="success" as="input" type="submit" value="Save Changes" />{' '}
+                    <Button variant="secondary" as="input" type="submit" value="Save Changes" />{' '}
                 </Form>
 
                 <ul>{this.props.travels.travels}</ul>
